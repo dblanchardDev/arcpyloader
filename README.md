@@ -3,14 +3,21 @@ Loads the correct arcgisscripting DLL for ArcPy to function when relaunched from
 
 ---
 
-Under certain circumstances, the use of the Python multiprocessing module in combination with ArcPy from ArcGIS Desktop will result in Python attempting to load the wrong version of the ArcPy DLL. For example, it will attempt to load the x86 DLL while running Python in x64.
+Under certain circumstances, importing ArcPy while using Python multiprocessing will result in an error like:
+```
+DLL load failed: %1 is not a valid Win32 application.
+```
 
-In this circumstance, use the provided *arcpyloader.py* file instead of loading ArcPy directly.
+This is caused by the sub-process attempting to load the wrong version of the arcgisscripting DLL (e.g. loading the x86 version in a x64 environment).
+
+This mainly occurs in ArcGIS Desktop with background processing installed.
+
+The *arcpyloader* file will adjust paths before loading ArcPy ensuring that the correct version of ArcPy is loaded.
 
 ## Use
 Place the *arcpyloader.py* file in the same directory as your code and use the following code to import ArcPy:
 ```python
-from	arcpyloader	import arcpy
+from  arcpyloader  import arcpy
 ``` 
 
 

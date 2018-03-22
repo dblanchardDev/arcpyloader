@@ -19,10 +19,10 @@ except Exception:
 
 	# Remove all paths pointing to wrong architecture
 	if platform.architecture()[0] == "64bit":
-		p = re.compile(r"desktop[\d\.]+(?:\\\\|\/)bin$", re.IGNORECASE)
+		p = re.compile(r"desktop[\d\.]+(?:\\|\/)bin$", re.IGNORECASE)
 
 	else:
-		p = re.compile(r"desktop[\d\.]+(?:\\\\|\/)bin64$", re.IGNORECASE)
+		p = re.compile(r"desktop[\d\.]+(?:\\|\/)bin64$", re.IGNORECASE)
 
 	wrong = [s for s in sys.path if p.search(s) is not None]
 
