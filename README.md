@@ -28,4 +28,4 @@ A copy of the license is available in the repository's [LICENSE](../master/LICEN
 
 ## Support
 
-This theme is distributed as is and is not supported by Esri Canada, Esri Inc. or any other Esri distributor.
+This code is distributed as is and is not supported by Esri Canada, Esri Inc. or any other Esri distributor.
