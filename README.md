@@ -1,6 +1,9 @@
 # arcpyloader
 Loads the correct arcgisscripting DLL for ArcPy to function when relaunched from within another Python scripts.
 
+> 🛑 **Deprecated**  
+> The arcpyloader was written for ArcMap which is now nearing end of life. Consider using ArcGIS Pro instead, which does not need this tool as it is entriely 64-bit.
+
 ---
 
 Under certain circumstances, importing ArcPy while using Python multiprocessing will result in an error like:
